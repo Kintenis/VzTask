@@ -24,3 +24,4 @@ A simple web application with the following:
 * Feel free to use existing docker configuration
 * Write a detailed description on how to launch project if you chose not to use existing docker configuration
 * Keep everything simple
+* https://github.com/ishaqadhel/docker-laravel-mysql-nginx-starter
