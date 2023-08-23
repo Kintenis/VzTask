@@ -35,4 +35,17 @@ class Stock extends Model
      * @var string
      */
     protected $connection = 'mysql';
+
+    public static function findBySku($sku) {
+        $stocks = self::all();
+        $output = [];
+
+        foreach ($stocks as $stock) {
+            if($stock['sku'] === $sku) {
+                $output[] = $stock;
+            }
+        }
+
+        return $output;
+    }
 }

@@ -1,27 +1,17 @@
 # PHP backend task
 
-## Requirements:
+## Project setup
 
-- Use **preinstalled laravel** project
-- Use **latest stable php** version
-- **GIT** version control
-- Mysql database
-- **Bootstrap** or any other **CSS** framework for frontend
+- Run command ``docker-compose build`` on your terminal
+- Run command ``docker-compose up -d`` on your terminal
+- Run command ``chmod -R 777 storage`` on your terminal after went into php container on docker
+- Run command ``composer install`` on your terminal after went into php container on docker
+- Run command ``php artisan key:generate`` on your terminal after went into php container on docker
+- Run command ``php artisan migrate`` on your terminal after went into php container on docker
 
-## Task
-A simple web application with the following:
+## Data generation
+- Run command ``php artisan app:import-products`` on your terminal after went into php container on docker to generate products
+- Run command ``php artisan app:import-stocks`` on your terminal after went into php container on docker to generate stocks
 
-* Write a command which imports products from a given JSON file ``storage/app/public/products.json``
-* Write a **scheduled** command which imports products stock from given JSON file ``storage/app/public/products.json``
-* Write a **JSON API** endpoint which can list all existing products
-* Frontend:
-    * list all products with simple search by description
-    * single product page
-* Use basic caching
-
-## Tips
-* Fork this repository and make your own
-* Feel free to use existing docker configuration
-* Write a detailed description on how to launch project if you chose not to use existing docker configuration
-* Keep everything simple
-* https://github.com/ishaqadhel/docker-laravel-mysql-nginx-starter
+## API
+- GET endpoint listing all of the products ``http://localhost:8001/api/get-all-products``
